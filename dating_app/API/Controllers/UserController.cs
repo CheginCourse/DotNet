@@ -10,9 +10,7 @@ namespace API.Controllers
 {
     // ba estefade az attribute ma miam va address controller 
     // ro taiin mikonim 
-    [ApiController]
-    [Route("api/[controller]")]
-    public class UserController : ControllerBase
+    public class UserController : BaseController
     {
         private readonly DataContext _context;
 
