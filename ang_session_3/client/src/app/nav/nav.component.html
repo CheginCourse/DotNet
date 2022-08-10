@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid" >
+      <a class="navbar-brand" href="#">Carousel</a>
+        <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="loggedIn" >
+          <li class="nav-item">
+            <a class="nav-link "  *ngIf="  loggedIn" href="#">Lists</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Matchs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ">Messages</a>
+          </li>
+        </ul>
+       
+
+        <form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" role="search" *ngIf="!loggedIn" autocomplete="off">
+          <input 
+          name="username"
+          [(ngModel)]='model.username'
+           class="form-control me-2" type="text" placeholder="User" style="margin-right:8px ;">
+          <input
+          name="password"
+          [(ngModel)]='model.password'
+           class="form-control me-2" type="password" placeholder="Password" style="margin-right:8px ;">
+          <button class="btn btn-outline-success"  type="submit">Login</button>
+        </form>
+        <div ngbDropdown class="d-inline-block" *ngIf="loggedIn">
+            <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem>EditProfile</button>
+              <button ngbDropdownItem (click)="logout()">LogOut</button>
+             
+            </div>
+            </div>
+       </div>
+
+
+  </nav>
